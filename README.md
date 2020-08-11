@@ -16,11 +16,41 @@ We propose an improved discriminative model prediction method for robust long-te
 ---
 ### Prerequisites
 
-will be uploaded soon.
+- Ubuntu 18.04 / Python 3.6 / CUDA 10.0 / gcc 7.5.0
+- Need anaconda
+- Need GPU (more than 2GB, Sometimes it is a little more necessary depending on the situation.)
+- Unfortunately, "Precise RoI Pooling" included in the Dimp tracker only supports GPU (cuda) implementations.
+- Need root permission
+- All libraries in “install.sh” file (please check “how to install”)
+
+---
+### How to install 
+
+- Unzip files in <tracker-path>
+- cd <tracker-path>
+- bash install.sh <anaconda-path> <env-name> (Automatically create conda environment, If you don’t want to make more conda environments, run “bash install_in_conda.sh” after conda activation)
+- check pretrained model "super_dimp.pth.tar" in <tracker-path>/pytracking/networks/ (It should be downloaded by install.sh)
+- conda activate <env-name>
+- make VOTLT2020 workspace (vot workspace votlt2020 --workspace <workspace-path>)
+- move trackers.ini to <workspace-path>
+- move(or download) votlt2020 dataset to <workspace-path>/sequences
+- set the VOT dataset directory (<tracker-path>/pytracking/evaluation/local.py), vot_path should include ‘sequence’ word (e.g., <vot-dataset-path>/sequences/), vot_path must be the absolute path (not relative path)
+- modify paths in the trackers.ini file, paths should include ‘pytracking’ word (e.g., <tracker-path>/pytracking), paths must be absolute path (not relative path)
+- cd <workspace-path>
+- vot evaluate RLT_DiMP --workspace <workspace-path>
+- It will fail once because the “precise rol pooling” file has to be compiled through the ninja. Please check the handling error parts.
+- vot analysis --workspace <workspace-path> RLT_DiMP --output json
 
 
+---
+### Handling errors
 
-
+- “Process did not finish yet” or “Error during tracker execution: Exception when waiting for response: Unknown”-> re-try or “sudo rm -rf /tmp/torch_extensions/_prroi_pooling/”
+- About “groundtruth.txt” -> check vot_path in the <tracker-path>/pytracking/evaluation/local.py file
+- About “pytracking/evaluation/local.py” -> check and run install.sh
+- About “permission denied : “/tmp/torch_extensions/_prroi_pooling/” -> sudo chmod -R 777 /tmp/torch_extensions/_prroi_pooling/
+- About “No module named 'ltr.external.PreciseRoiPooling’” or “can not complie Precise RoI Pooling library error” -> cd <tracker-path> -> rm -rf /ltr/external/PreciseRoiPooling -> git clone https://github.com/vacancy/PreciseRoIPooling.git ltr/external/PreciseRoIPooling
+- If nothing happens since the code just stopped -> sudo rm -rf /tmp/torch_extensions/_prroi_pooling/
 
 
 ---
@@ -51,10 +81,9 @@ If you have any questions, please feel free to contact seokeon@kaist.ac.kr
 ```
 
 
+---
+### Reference
 
-## Reference
-
-
-- [1]
-
-- [2]
+- [PrDiMP] Danelljan, Martin, Luc Van Gool, and Radu Timofte. "Probabilistic Regression for Visual Tracking." arXiv preprint arXiv:2003.12565 (2020).
+- [DiMP] Bhat, Goutam, et al. "Learning discriminative model prediction for tracking." Proceedings of the IEEE International Conference on Computer Vision. 2019.
+- [ATOM] Danelljan, Martin, et al. "Atom: Accurate tracking by overlap maximization." Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2019.
