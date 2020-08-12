@@ -1,0 +1,11 @@
+configuration:
+  arguments: {}
+  command: import run_vot; run_vot.run_vot2020_LT('RLT_dimp', 'new', None, 0)
+  env: {}
+  label: RLT_DiMP
+  paths: /media/choi/hard2/2020/code_lab1/tracking/atom/pytracking/
+  protocol: traxpython
+identifier: RLT_DiMP
+platform: linux
+python: "3.6.10 |Anaconda, Inc.| (default, Mar 25 2020, 23:51:54) \n[GCC 7.3.0]"
+timestamp: 2020-05-04T06-17-23.176897
