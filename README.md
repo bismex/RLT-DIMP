@@ -20,36 +20,39 @@
 
 
 ---
+
 ### Summary
 
-#### <Abstract>
+#### Abstract
 
 We propose an improved discriminative model prediction method for robust long-term tracking based on a pre-trained short-term tracker. The baseline pre-trained short-term tracker is SuperDiMP which combines the bounding-box regressor of PrDiMP with the standard DiMP classifier. Our tracker RLT-DiMP improves SuperDiMP in the following three aspects: (1) Uncertainty reduction using random erasing: To make our model robust, we exploit an agreement from multiple images after erasing random small rectangular areas as a certainty. And then, we correct the tracking state of our model accordingly. (2) Random search with spatio-temporal constraints: we propose a robust random search method with a score penalty applied to prevent the problem of sudden detection at a distance. (3) Background augmentation for more discriminative feature learning: We augment various backgrounds that are not included in the search area to train a more robust model in the background clutter. In experiments on the VOT-LT2020 benchmark dataset, the proposed method achieves comparable performance to the state-of-the-art long-term trackers.
 
 
 ---
-#### <Framework>
+
+#### Framework
   
 <img src='./figure/framework.PNG' width='800'>
 
 ---
 
-#### <Baseline>
+#### Baseline
 
 - We adopt the pre-trained short-term tracker which combines the bounding box regressor of PrDiMP with the standard DiMP classifier
 - This tracker's name is SuperDiMP and it can be downloaded on the DiMP-family's github page [[link](https://github.com/visionml/pytracking/blob/master/MODEL_ZOO.md#Models)
 
 
 ---
-#### <Contribution1: Uncertainty reduction using random erasing>
+
+#### Contribution1: Uncertainty reduction using random erasing
 <img src='./figure/contribution1.PNG' width='800'>
 
 ---
-#### <Contribution2: Random search with spatio-temporal constraints>
+#### Contribution2: Random search with spatio-temporal constraints
 <img src='./figure/contribution2.PNG' width='800'>
 
 ---
-#### <Contribution3: Background augmentation for more discriminative learning>
+#### Contribution3: Background augmentation for more discriminative learning
 <img src='./figure/contribution3.PNG' width='800'>
 
 
@@ -87,8 +90,8 @@ We propose an improved discriminative model prediction method for robust long-te
 
 - “Process did not finish yet” or “Error during tracker execution: Exception when waiting for response: Unknown”-> re-try or “sudo rm -rf `/tmp/torch_extensions/_prroi_pooling/`”
 - About “groundtruth.txt” -> check vot_path in the `$(tracker-path)/pytracking/evaluation/local.py` file
-- About “pytracking/evaluation/local.py” -> check and run install.sh
-- About “permission denied : “/tmp/torch_extensions/_prroi_pooling/” -> sudo chmod -R 777 `/tmp/torch_extensions/_prroi_pooling/`
+- About “`pytracking/evaluation/local.py`” -> check and run install.sh
+- About “permission denied : “`/tmp/torch_extensions/_prroi_pooling/`” -> sudo chmod -R 777 `/tmp/torch_extensions/_prroi_pooling/`
 - About “No module named 'ltr.external.PreciseRoiPooling’” or “can not complie Precise RoI Pooling library error” -> cd `$(tracker-path)` -> rm -rf `/ltr/external/PreciseRoiPooling` -> git clone https://github.com/vacancy/PreciseRoIPooling.git `ltr/external/PreciseRoIPooling`
 - If nothing happens since the code just stopped -> sudo rm -rf `/tmp/torch_extensions/_prroi_pooling/`
 
