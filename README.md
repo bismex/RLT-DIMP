@@ -6,14 +6,33 @@
 
 
 ---
-### Abstract
+### Summary
+
+#### Abstract
 
 We propose an improved discriminative model prediction method for robust long-term tracking based on a pre-trained short-term tracker. The baseline pre-trained short-term tracker is SuperDiMP which combines the bounding-box regressor of PrDiMP with the standard DiMP classifier. Our tracker RLT-DiMP improves SuperDiMP in the following three aspects: (1) Uncertainty reduction using random erasing: To make our model robust, we exploit an agreement from multiple images after erasing random small rectangular areas as a certainty. And then, we correct the tracking state of our model accordingly. (2) Random search with spatio-temporal constraints: we propose a robust random search method with a score penalty applied to prevent the problem of sudden detection at a distance. (3) Background augmentation for more discriminative feature learning: We augment various backgrounds that are not included in the search area to train a more robust model in the background clutter. In experiments on the VOT-LT2020 benchmark dataset, the proposed method achieves comparable performance to the state-of-the-art long-term trackers.
 
 
 ---
-### Framework
+#### Framework
 
+
+
+---
+#### Baseline
+
+- We adopt the pre-trained short-term tracker which combines the bounding box regressor of PrDiMP with the standard DiMP classifier
+- This tracker's name is SuperDiMP and it can be downloaded on the DiMP-family's github page [link](https://github.com/visionml/pytracking/blob/master/MODEL_ZOO.md#Models)
+
+
+---
+#### Contribution1: Uncertainty reduction using random erasing
+
+---
+#### Contribution2: Random search with spatio-temporal constraints
+
+---
+#### Contribution3: Background augmentation for more discriminative learning
 
 
 ---
