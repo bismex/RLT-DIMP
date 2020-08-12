@@ -1,4 +1,7 @@
-## Robust Long-Term Object Tracking via Improved Discriminative Model Prediction (RLT-DIMP)
+**Feel free to visit my [homepage](https://sites.google.com/site/seokeonchoi/)**
+
+## Robust Long-Term Object Tracking via Improved Discriminative Model Prediction (RLT-DIMP) [[paper](https://arxiv.org/abs/2008.04722)]
+<img src='./figure/thumbnail_title.PNG' width='800'>
 
 
 ----
@@ -15,8 +18,7 @@ We propose an improved discriminative model prediction method for robust long-te
 
 ---
 #### Framework
-
-
+<img src='./figure/framework.PNG' width='800'>
 
 ---
 #### Baseline
@@ -27,12 +29,15 @@ We propose an improved discriminative model prediction method for robust long-te
 
 ---
 #### Contribution1: Uncertainty reduction using random erasing
+<img src='./figure/contribution1.PNG' width='800'>
 
 ---
 #### Contribution2: Random search with spatio-temporal constraints
+<img src='./figure/contribution2.PNG' width='800'>
 
 ---
 #### Contribution3: Background augmentation for more discriminative learning
+<img src='./figure/contribution3.PNG' width='800'>
 
 
 ---
