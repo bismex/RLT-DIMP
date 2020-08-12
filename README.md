@@ -29,13 +29,15 @@ We propose an improved discriminative model prediction method for robust long-te
 
 ---
 #### <Framework>
+  
 <img src='./figure/framework.PNG' width='800'>
 
 ---
+
 #### <Baseline>
 
 - We adopt the pre-trained short-term tracker which combines the bounding box regressor of PrDiMP with the standard DiMP classifier
-- This tracker's name is SuperDiMP and it can be downloaded on the DiMP-family's github page [link](https://github.com/visionml/pytracking/blob/master/MODEL_ZOO.md#Models)
+- This tracker's name is SuperDiMP and it can be downloaded on the DiMP-family's github page [[link](https://github.com/visionml/pytracking/blob/master/MODEL_ZOO.md#Models)
 
 
 ---
