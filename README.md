@@ -4,6 +4,12 @@
 <img src='./figure/thumbnail_title.PNG' width='800'>
 
 
+
+
+
+[![Github stats](https://github-readme-stats.vercel.app/api?username=bismex&show_icons=true&count_private=true)](https://github.com/anuraghazra/github-readme-stats) [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=bismex&layout=compact&hide=jupyter%20notebook,HTML)](https://github.com/anuraghazra/github-readme-stats)
+
+
 ----
 ### Presentation video
 
